@@ -18,6 +18,7 @@ public class MyFirstWindow {
 	protected Shell shell;
 	private Text text;
 	private Label lblSuche;
+	private Button btnQualitativHochwertigerContent;
 
 	/**
 	 * Launch the application.
@@ -60,10 +61,10 @@ public class MyFirstWindow {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				try {
-					String s = "https://www.youtube.com/results?search_query="+text.getText();
+					String s = "https://de.pornhub.com/video/search?search="+text.getText();
 					new ProcessBuilder(new String[] { "cmd", "/c", "start",
 					s }).start();
-					System.out.println(s);
+
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -74,11 +75,30 @@ public class MyFirstWindow {
 		btnStart.setText("Start");
 				
 		text = new Text(shell, SWT.BORDER);
-		text.setBounds(163, 104, 76, 21);
+		text.setBounds(163, 104, 208, 21);
 		
 		lblSuche = new Label(shell, SWT.NONE);
 		lblSuche.setBounds(102, 110, 55, 15);
 		lblSuche.setText("Suche:");
+		
+		btnQualitativHochwertigerContent = new Button(shell, SWT.NONE);
+		btnQualitativHochwertigerContent.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				try {
+					String s = "https://de.pornhub.com/view_video.php?viewkey=ph579a682e7555e";
+					new ProcessBuilder(new String[] { "cmd", "/c", "start",
+					s }).start();
+					System.out.println(s);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+			}
+		});
+		btnQualitativHochwertigerContent.setBounds(102, 191, 207, 25);
+		btnQualitativHochwertigerContent.setText("Qualitativ Hochwertiger content");
 
 	}
 

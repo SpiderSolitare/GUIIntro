@@ -198,6 +198,9 @@ public class Taschenrechner {
 				getErgebnis().setText(Integer.toString(ergebnis));
 				getZahl().setText("");
 			}
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+			}
 		});
 		button_2.setBounds(130, 84, 75, 25);
 		button_2.setText("*");
